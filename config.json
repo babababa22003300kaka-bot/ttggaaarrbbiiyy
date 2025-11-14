@@ -1,0 +1,85 @@
+{
+  "telegram": {
+    "bot_token": "YOUR_BOT_TOKEN_HERE",
+    "admin_ids": []
+  },
+  "website": {
+    "urls": {
+      "base": "https://example.com",
+      "sender_page": "https://example.com/sender",
+      "add_api": "https://example.com/api/add",
+      "search_api": "https://example.com/api/search"
+    },
+    "cookies": {
+      "PHPSESSID": "your_session_id",
+      "login_token": "your_login_token",
+      "login_key": "your_login_key"
+    },
+    "defaults": {
+      "group_name": " ",
+      "account_lock": "1",
+      "amount_take": "",
+      "amount_keep": "",
+      "priority": "",
+      "force_proxy": "",
+      "user_price": ""
+    }
+  },
+  "api": {
+    "enabled": true,
+    "host": "0.0.0.0",
+    "port": 8080
+  },
+  "google_sheet": {
+    "enabled": true,
+    "spreadsheet_id": "your_spreadsheet_id_here",
+    "sheet_name": "Sheet1",
+    "credentials_file": "credentials.json"
+  },
+  "queue": {
+    "pending_interval_min": 1,
+    "pending_interval_max": 10,
+    "retry_interval_min": 30,
+    "retry_interval_max": 60,
+    "max_retries": 50,
+    "log_dir": "logs"
+  },
+  "taken_handler": {
+    "enabled": true,
+    "columns": {
+      "AMOUNT_TAKEN": "C",
+      "DISABLED": "C"
+    },
+    "interval_min": 1,
+    "interval_max": 10
+  },
+  "notification_groups": {
+    "enabled": true,
+    "groups": [
+      {
+        "enabled": true,
+        "name": "جميع الحالات",
+        "group_id": -5030130900,
+        "statuses": []
+      },
+      {
+        "enabled": true,
+        "name": "متاح",
+        "group_id": -5088596401,
+        "statuses": ["AVAILABLE"]
+      },
+      {
+        "enabled": true,
+        "name": "انتقالات",
+        "group_id": -5040383346,
+        "statuses": ["REFRESHING", "TRANSFERRING"]
+      },
+      {
+        "enabled": true,
+        "name": "انتهاء",
+        "group_id": -5017859898,
+        "statuses": ["AMOUNT_TAKEN", "DISABLED"]
+      }
+    ]
+  }
+}
